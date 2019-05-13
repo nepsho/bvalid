@@ -1,0 +1,32 @@
+{
+  "name": "bvalid",
+  "version": "0.0.1",
+  "description": "Nodejs validator",
+  "main": "index.js",
+  "contributors": [
+    "bcrazydreamer <bcrazydreamer@gmail.com>"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "repository": "nepsho/bvalid",
+  "bugs": {
+    "url": "https://github.com/nepsho/bvalid/issues"
+  },
+  "author": "bcrazydreamer <bcrazydreamer@gmail.com>",
+  "homepage": "https://nepsho.github.io/opensource/bvalid.html",
+  "keywords": [
+    "api",
+    "validator",
+    "JavaScript",
+    "datatype",
+    "data"
+  ],
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "lib/"
+  ]
+}
