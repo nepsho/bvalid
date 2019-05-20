@@ -4,5 +4,5 @@
 
 # 0.0.1 / 2019-05-13
  - Basic JavaScript data validation.
- - Added class , function or regex like validation.
- - Added BigInt, Symbol, Buffer validations etc
+ - Added (class , function or regex) like validation.
+ - Added (BigInt, Symbol, Buffer) validations etc
