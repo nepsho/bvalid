@@ -1,7 +1,7 @@
 {
   "name": "bvalid",
-  "version": "0.0.1",
-  "description": "Nodejs validator",
+  "version": "0.0.2",
+  "description": "NodeJs validator",
   "main": "index.js",
   "contributors": [
     "bcrazydreamer <bcrazydreamer@gmail.com>"
@@ -26,7 +26,7 @@
   "files": [
     "LICENSE",
     "README.md",
-    "History.md"
+    "History.md",
     "index.js",
     "lib/"
   ]
