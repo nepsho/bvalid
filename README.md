@@ -76,13 +76,13 @@ bvalid.isEmail("bcrazydreamer@gmail.com") //true
 bvalid.isPort("3030") //true
 ```
 
-## isUrl:
-This validator cover all possible URLs with latest structure. It includes valid IP URLs also. This function is able to work even without the URL protocol.
+**isUrl:**
+This validator covers all possible URLs with latest structure. It includes valid IP URLs also. This function is able to work even without the URL protocol.
 
-## isEmail:
+**isEmail:**
 Its validate emails as per latest URL structure.
 
-## isPort:
+**isPort:**
 Its validate computer port (computer networking).
 
 
