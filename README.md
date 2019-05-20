@@ -1,4 +1,5 @@
 
+
 # BValid
 [![NPM](https://nodei.co/npm/bvalid.png)](https://nodei.co/npm/bvalid/)
 
@@ -12,7 +13,7 @@ enter code here
 **BValid** is a api to check the type of data. That data can either be function/class or can either be basic data structure
 ## Features
 - Validate type of any data in JavaScript
-- Support in modren JavaScript also
+- Support in modern JavaScript also
 
 ## Support
 ES5 | ES6 |
@@ -69,7 +70,22 @@ bvalid.isDate( 12345 ) //false
 bvalid.isError( new Error("Err") ) //true
 bvalid.isSymbol( "bvalid" )  //false
 bvalid.isBase64( ifBase64String ) //true
+
+bvalid.isUrl("http://www.nepsho.com") //true
+bvalid.isEmail("bcrazydreamer@gmail.com") //true
+bvalid.isPort("3030") //true
 ```
+
+## isUrl:
+This validator cover all possible URLs with latest structure. It includes valid IP URLs also. This function is able to work even without the URL protocol.
+
+## isEmail:
+Its validate emails as per latest URL structure.
+
+## isPort:
+Its validate computer port (computer networking).
+
+
 
 ## licence
 MIT [licence](https://opensource.org/licenses/MIT)
