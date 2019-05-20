@@ -26,6 +26,7 @@
   "files": [
     "LICENSE",
     "README.md",
+    "History.md"
     "index.js",
     "lib/"
   ]
