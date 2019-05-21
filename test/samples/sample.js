@@ -68,7 +68,20 @@ if(node_v>=10){
 } else {
   var s_bigint = [];
 }
-var s_buffer = [new Buffer(123),new Buffer([1,2,3,4,5,6])];
+
+try{
+  var buff_a = Buffer.alloc(123);
+  var buff_b = Buffer.from([1,2,3,4,5,6]);
+  var buff_c = Buffer.from("bcrazydreamer");
+} catch(err){
+  var buff_a = new Buffer(123);
+  var buff_b = new Buffer([1,2,3,4,5,6]);
+  var buff_c = new Buffer("bcrazydreamer");
+}
+
+var s_buffer = [buff_a,buff_b,buff_c];
+
+
 var s_regex = [/bcrazy/,/[a-zA-Z]/,/^b$/];
 var s_object = [{a:1,b:2},{},{"a":"1","b":"2"}];
 
