@@ -3,8 +3,7 @@
 # BValid
 [![NPM](https://nodei.co/npm/bvalid.png)](https://nodei.co/npm/bvalid/)
 
-enter code here
-
+[![Build Status](https://travis-ci.org/nepsho/bvalid.svg?branch=master)](https://travis-ci.org/nepsho/bvalid)
 [![npm version](https://img.shields.io/npm/v/bvalid.svg?style=flat-square)](https://www.npmjs.org/package/bvalid)
 [![npm license](https://img.shields.io/static/v1.svg?label=License&message=MIT&color=informational)](https://github.com/nepsho/bvalid/blob/master/LICENSE)
 [![npm repository](https://img.shields.io/static/v1.svg?label=Repository&message=GitHub&color=yellow)](https://github.com/nepsho/bvalid)
