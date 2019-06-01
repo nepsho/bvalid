@@ -1,7 +1,7 @@
 "use strict";
 const bvalid = require("../index");
 const sample = require("./samples/sample");
-const {isString} = require("../index")
+const isString = require("../index").isString;
 const node_version = process.version || "v0";
 var node_v = 0;
 
