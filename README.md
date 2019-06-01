@@ -1,5 +1,3 @@
-
-
 # BValid
 [![NPM](https://nodei.co/npm/bvalid.png)](https://nodei.co/npm/bvalid/)
 
@@ -22,21 +20,8 @@ ES5 | ES6 |
 ## Installing
 [![NPM](https://nodei.co/npm/bvalid.png?mini=true)](https://nodei.co/npm/webget/)
 
-**Using npm:**
 ```bash
 $ npm install bvalid
-```
-
-**Using bower:**
-
-```bash
-$ bower install bvalid
-```
-
-**Using yarn:**
-
-```bash
-$ yarn add bvalid
 ```
 
 ## Examples
