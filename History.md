@@ -1,4 +1,4 @@
-# 0.0.1 / 2019-06-01
+# 1.0.0 / 2019-06-01
  - Update README
  - Final first stable version
 
