@@ -1,6 +1,6 @@
 {
   "name": "bvalid",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "NodeJs validator",
   "main": "index.js",
   "contributors": [
