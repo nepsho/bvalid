@@ -18,8 +18,6 @@ ES5 | ES6 |
 ✔|✔|
 
 ## Installing
-[![NPM](https://nodei.co/npm/bvalid.png?mini=true)](https://nodei.co/npm/webget/)
-
 ```bash
 $ npm install bvalid
 ```
