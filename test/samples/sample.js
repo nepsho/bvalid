@@ -1,7 +1,7 @@
 "use strict";
 const email_s = require("./emails_sample");
 const url_s = require("./url_sample");
-const {isString} = require("../../index")
+const isString = require("../../index").isString;
 const node_version = process.version || "v0";
 var node_v = 0;
 
