@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "NodeJs validator",
   "main": "index.js",
+  "browser": "dist/bvalid.min.js",
   "contributors": [
     "bcrazydreamer <bcrazydreamer@gmail.com>"
   ],
