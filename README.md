@@ -56,6 +56,11 @@ bvalid.isBase64( ifBase64String ) //true
 bvalid.isUrl("http://www.nepsho.com") //true
 bvalid.isEmail("bcrazydreamer@gmail.com") //true
 bvalid.isPort("3030") //true
+
+bvalid.isUppercase("BVALID") //true
+bvalid.isLowercase("bvalid") //false
+bvalid.isAlphabet("bvalid") //true
+bvalid.isAlphanumeric("bvalid12345") //true
 ```
 
 ## isUrl:

@@ -1,8 +1,10 @@
 {
   "name": "bvalid",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "NodeJs validator",
   "main": "index.js",
+  "browser": "dist/bvalid.min.js",
+  "module": "lib/Bvalid.es.js",
   "contributors": [
     "bcrazydreamer <bcrazydreamer@gmail.com>"
   ],
@@ -28,6 +30,7 @@
     "README.md",
     "History.md",
     "index.js",
-    "lib/"
+    "lib/",
+    "dist/"
   ]
 }
