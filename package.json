@@ -31,6 +31,6 @@
     "History.md",
     "index.js",
     "lib/",
-    "dist"
+    "dist/"
   ]
 }
