@@ -28,6 +28,7 @@
     "README.md",
     "History.md",
     "index.js",
-    "lib/"
+    "lib/",
+    "dist"
   ]
 }
