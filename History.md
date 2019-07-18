@@ -1,3 +1,9 @@
+# 1.0.1 / 2019-06-01
+ - Update README
+ - New functions added (isUppercase,isLowercase,isAlphabet,isAlphanumeric)
+ - Email Reg updated
+ - Final first stable version
+
 # 1.0.0 / 2019-06-01
  - Update README
  - Final first stable version
