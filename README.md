@@ -1,13 +1,9 @@
 # BValid
-[![NPM](https://nodei.co/npm/bvalid.png)](https://nodei.co/npm/bvalid/)
-
 [![Build Status](https://travis-ci.org/nepsho/bvalid.svg?branch=master)](https://travis-ci.org/nepsho/bvalid)
-[![npm version](https://img.shields.io/npm/v/bvalid.svg?style=flat-square)](https://www.npmjs.org/package/bvalid)
 [![npm license](https://img.shields.io/static/v1.svg?label=License&message=MIT&color=informational)](https://github.com/nepsho/bvalid/blob/master/LICENSE)
 [![npm repository](https://img.shields.io/static/v1.svg?label=Repository&message=GitHub&color=yellow)](https://github.com/nepsho/bvalid)
-[![npm author](https://img.shields.io/static/v1.svg?label=Author&message=bcrazydreamer&color=success)](https://www.npmjs.com/~bcrazydreamer)
 
-**BValid** is a api to check the type of data. That data can either be function/class or can either be basic data structure
+**npm** module to check the type of data. That data can either be function/class or can either be basic data type
 ## Features
 - Validate type of any data in JavaScript
 - Support in modern JavaScript also
@@ -62,6 +58,14 @@ bvalid.isLowercase("bvalid") //false
 bvalid.isAlphabet("bvalid") //true
 bvalid.isAlphanumeric("bvalid12345") //true
 ```
+## Browser Usage
+```html
+<script src="./node_module/bvalid/dist/bvalid.min.js"></script>
+<script>
+    const bvalid = new bvalid();
+    /*--Use bvalid--*/
+</script>
+```
 
 ## isUrl:
 >This validator covers all possible URLs with latest structure. It includes valid IP URLs also. This function is able to work even without the URL protocol.
@@ -71,7 +75,6 @@ bvalid.isAlphanumeric("bvalid12345") //true
 
 ## isPort:
 >Its validate computer port (computer networking).
-
 
 
 ## licence
