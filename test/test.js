@@ -1,11 +1,9 @@
 "use strict";
-const bvalid = require("../index");
+const bvalid = require("../lib/bvalid");
 const sample = require("./samples/sample");
-const isString = require("../index").isString;
+const isString = bvalid.isString;
 const node_version = process.version || "v0";
 var node_v = 0;
-
-var samp = sample.all_sample;
 
 if(isString(node_version)==false)
 {
@@ -20,7 +18,6 @@ if(node_version[1] != undefined){
 } else {
   node_v = 0;
 }
-
 
 
 //string

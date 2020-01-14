@@ -2,7 +2,7 @@
   "name": "bvalid",
   "version": "1.0.1",
   "description": "NodeJs validator",
-  "main": "index.js",
+  "main": "lib/bvalid.js",
   "browser": "dist/bvalid.min.js",
   "module": "lib/bvalid.es.js",
   "contributors": [
@@ -28,7 +28,6 @@
   "files": [
     "LICENSE",
     "README.md",
-    "index.js",
     "lib/",
     "dist/"
   ]
