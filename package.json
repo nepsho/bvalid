@@ -4,7 +4,7 @@
   "description": "NodeJs validator",
   "main": "index.js",
   "browser": "dist/bvalid.min.js",
-  "module": "lib/Bvalid.es.js",
+  "module": "lib/bvalid.es.js",
   "contributors": [
     "bcrazydreamer <bcrazydreamer@gmail.com>"
   ],
@@ -17,7 +17,7 @@
     "url": "https://github.com/nepsho/bvalid/issues"
   },
   "author": "bcrazydreamer <bcrazydreamer@gmail.com>",
-  "homepage": "https://nepsho.github.io/opensource/bvalid.html",
+  "homepage": "https://github.com/nepsho/bvalid#readme",
   "keywords": [
     "api",
     "validator",
@@ -28,7 +28,6 @@
   "files": [
     "LICENSE",
     "README.md",
-    "History.md",
     "index.js",
     "lib/",
     "dist/"

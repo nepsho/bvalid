@@ -88,11 +88,11 @@ bvalid.prototype.isString = function(variable){
 }
 
 bvalid.prototype.isArray = function(variable){
-  return Object.prototype.toString.call(variable) == "[object Array]";
+  return Object.prototype.toString.call(variable) === "[object Array]";
 }
 
 bvalid.prototype.isNumber = function(variable){
-  return Object.prototype.toString.call(variable) == "[object Number]";
+  return Object.prototype.toString.call(variable) === "[object Number]";
 }
 
 bvalid.prototype.isInt = function(variable){
@@ -171,18 +171,18 @@ bvalid.prototype.isSymbol = function(variable){
 }
 
 bvalid.prototype.isPromise = function(variable){
-  return Object.prototype.toString.call(variable) == "[object Promise]";
+  return Object.prototype.toString.call(variable) === "[object Promise]";
 }
 
 bvalid.prototype.isBase64 = function(variable){
-    if(Object.prototype.toString.call(variable) == "[object String]"){
+    if(Object.prototype.toString.call(variable) === "[object String]"){
       return ___brw_base64.test(variable);
     }
     return false;
 }
 
 bvalid.prototype.isUrl = function(variable){
-    if(Object.prototype.toString.call(variable) == "[object String]"){
+    if(Object.prototype.toString.call(variable) === "[object String]"){
         if(___brw_validDomainReg.test(variable)) return true;
         if(___brw_validIpUrlReg.test(variable)) return true;
     }
@@ -205,28 +205,28 @@ bvalid.prototype.isEmail = function(variable){
 }
 
 bvalid.prototype.isUppercase = function(variable){
-  if(Object.prototype.toString.call(variable) == "[object String]"){
+  if(Object.prototype.toString.call(variable) === "[object String]"){
     return (/[a-z]/g.test(variable)===false);
   }
   return false;
 }
 
 bvalid.prototype.isLowercase = function(variable){
-  if(Object.prototype.toString.call(variable) == "[object String]"){
+  if(Object.prototype.toString.call(variable) === "[object String]"){
     return (/[A-Z]/g.test(variable)===false);
   }
   return false;
 }
 
 bvalid.prototype.isAlphabet = function(variable){
-  if(Object.prototype.toString.call(variable) == "[object String]"){
+  if(Object.prototype.toString.call(variable) === "[object String]"){
     return /^[a-zA-Z]+$/.test(variable);
   }
   return false;
 }
 
 bvalid.prototype.isAlphanumeric = function(variable){
-  if(Object.prototype.toString.call(variable) == "[object String]"){
+  if(Object.prototype.toString.call(variable) === "[object String]"){
     if(variable.trim().length === 0) return false;
     if(/^[a-zA-Z0-9]+$/.test(variable) &&
       /[a-zA-Z]/.test(variable) &&
