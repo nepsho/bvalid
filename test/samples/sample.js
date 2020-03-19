@@ -107,6 +107,27 @@ var s_port = [
   "443"
 ]
 
+var s_uppercase = [
+  "UBHBHBHV",
+  "UCGYHVHVJHB",
+  "IGYUGYUGGVGH"
+]
+
+var s_lowercase = [
+  "cdhcdsdc",
+  "wjhcvvhercv",
+  "wejcbejhc"
+]
+
+var s_alphanumeric = [
+  "878bbhGCch",
+  "87675hvhv",
+  "jhvhjvGCGC77hj",
+  "HGgCCGgh54655667",
+  "a1",
+  "1a"
+]
+
 var all_sample = [
   ["email",s_emails],
   ["url",s_urls],
@@ -128,7 +149,10 @@ var all_sample = [
   ["date",s_date],
   ["error",s_error],
   ["symbol",s_symbol],
-  ["base64",s_base64]
+  ["base64",s_base64],
+  ["uppercase",s_lowercase],
+  ["lowercase",s_lowercase],
+  ["alphanumeric",s_alphanumeric]
 ]
 
 module.exports = {
@@ -155,5 +179,8 @@ module.exports = {
   s_error: s_error,
   s_symbol: s_symbol,
   s_base64: s_base64,
+  s_uppercase : s_uppercase,
+  s_lowercase : s_lowercase,
+  s_alphanumeric : s_alphanumeric,
   all_sample : all_sample
 }

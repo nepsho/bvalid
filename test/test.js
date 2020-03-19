@@ -213,4 +213,31 @@ for(var i = 0 ; i < sample.s_emails.length ; i++)
   }
 }
 
+//upperCase
+for(var i = 0 ; i < sample.s_uppercase.length ; i++)
+{
+  if(bvalid.isUppercase(sample.s_uppercase[i]) === false)
+  {
+    throw new Error("Test fail at Upeercase");
+  }
+}
+
+//lowerCase
+for(var i = 0 ; i < sample.s_lowercase.length ; i++)
+{
+  if(bvalid.isLowercase(sample.s_lowercase[i]) === false)
+  {
+    throw new Error("Test fail at Lowercase");
+  }
+}
+
+//alphanumeric
+for(var i = 0 ; i < sample.s_alphanumeric.length ; i++)
+{
+  if(bvalid.isAlphanumeric(sample.s_alphanumeric[i]) === false)
+  {
+    throw new Error("Test fail at Alphanumeric");
+  }
+}
+
 console.log("All test cases passes");
