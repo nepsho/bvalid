@@ -1,6 +1,6 @@
 {
   "name": "bvalid",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "NodeJs validator",
   "main": "lib/bvalid.js",
   "browser": "dist/bvalid.min.js",

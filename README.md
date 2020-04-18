@@ -21,7 +21,9 @@ $ npm install bvalid
 ## Examples
 
 ```js
-const bvalid = require("bvalid")
+const bvalid = require("bvalid");
+    or
+import bvalid from 'bvalid/lib/bvalid.es';
 ```
 ```js
 bvalid.isString( "Hello" ); //true
@@ -62,20 +64,10 @@ bvalid.isAlphanumeric("bvalid12345") //true
 ```html
 <script src="./node_module/bvalid/dist/bvalid.min.js"></script>
 <script>
-    const bvalid = new bvalid();
+    const bv = new bvalid();
     /*--Use bvalid--*/
 </script>
 ```
-
-## isUrl:
->This validator covers all possible URLs with latest structure. It includes valid IP URLs also. This function is able to work even without the URL protocol.
-
-## isEmail:
->Its validate emails as per latest URL structure.
-
-## isPort:
->Its validate computer port (computer networking).
-
 
 ## licence
 MIT [licence](https://opensource.org/licenses/MIT)
