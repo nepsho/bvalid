@@ -1,3 +1,8 @@
+# 1.0.2 / 2020-04-19
+ - Update README
+ - Optimization
+ - Minor bug fixes
+
 # 1.0.1 / 2019-07-18
  - Update README
  - New functions added (isUppercase,isLowercase,isAlphabet,isAlphanumeric)

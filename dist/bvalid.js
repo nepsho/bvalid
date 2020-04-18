@@ -77,305 +77,160 @@ const ___brw_validEmailReg = new RegExp(
 
 const bvalid = function(){}
 
-const ___brw_isValidData = function(variable){
-  if(
-    Object.prototype.toString.call(variable) == "[object Undefined]" ||
-    typeof variable === "undefined"
-  )
-  {
-      return false
-  }
-  if(
-    Object.prototype.toString.call(variable) == "[object Null]" ||
-    (
-        (typeof variable === "object") && (variable === null)
-    )
-  )
-  {
-      return false;
-  }
+const ___brw_isValidData = function(_v){
+  if(Object.prototype.toString.call(_v) === "[object Undefined]"){return false}
+  if(Object.prototype.toString.call(_v) === "[object Null]"){return false}
   return true;
 }
 
-bvalid.prototype.isString = function(variable){
-    if(
-      Object.prototype.toString.call(variable) == "[object String]" ||
-      (
-        ___brw_isValidData(variable) && (typeof variable === "string") &&
-        (variable.constructor.name === 'String')
-      )
-    ) return true;
-    return false;
+bvalid.prototype.isString = function(_v){
+  return Object.prototype.toString.call(_v) === "[object String]";
 }
 
-bvalid.prototype.isArray = function(variable){
-    if(
-      ___brw_isValidData(variable) && variable.constructor.name === 'Array' ||
-      Object.prototype.toString.call(variable) == "[object Array]"
-    ) return true;
-    return false;
+bvalid.prototype.isArray = function(_v){
+  return Object.prototype.toString.call(_v) === "[object Array]";
 }
 
-bvalid.prototype.isNumber = function(variable){
-    if(
-      Object.prototype.toString.call(variable) == "[object Number]" ||
-      (
-        ___brw_isValidData(variable) && (typeof variable === "number") && (variable.constructor.name === 'Number')
-      )
-    ) return true;
-    return false;
+bvalid.prototype.isNumber = function(_v){
+  return Object.prototype.toString.call(_v) === "[object Number]";
 }
 
-bvalid.prototype.isInt = function(variable){
-    if(
-      Object.prototype.toString.call(variable) == "[object Number]" ||
-      (
-        ___brw_isValidData(variable) && (typeof variable === "number") && (variable.constructor.name === 'Number')
-      )
-    ){
-      if(String(variable) === "Infinity") return false;
-      return (variable % 1) === 0;
+bvalid.prototype.isInt = function(_v){
+    if(Object.prototype.toString.call(_v) === "[object Number]"){
+      return String(_v) !== "Infinity" && (_v % 1) === 0;
     }
     return false;
 }
 
-bvalid.prototype.isFloat = function(variable){
-    if(
-      Object.prototype.toString.call(variable) == "[object Number]" ||
-      (
-        ___brw_isValidData(variable) && (typeof variable === "number") && (variable.constructor.name === 'Number')
-      )
-    ){
-      if(String(variable) === "Infinity") return false;
-      return variable === variable && variable % 1 !== 0;
-    }
+bvalid.prototype.isFloat = function(_v){
+  if(Object.prototype.toString.call(_v) === "[object Number]"){
+    return String(_v) !== "Infinity" && _v && _v % 1 !== 0;
+  }
+  return false;
+}
+
+bvalid.prototype.isBigInt = function(_v){
+  return Object.prototype.toString.call(_v) === "[object BigInt]";
+}
+
+bvalid.prototype.isNull= function(_v){
+  return Object.prototype.toString.call(_v) === "[object Null]";
+}
+
+bvalid.prototype.isUndefined= function(_v){
+  return Object.prototype.toString.call(_v) === "[object Undefined]";
+}
+
+bvalid.prototype.isBuffer = function(_v){
+    if(___brw_isValidData(_v) && _v.constructor.name === 'Buffer') return true;
     return false;
 }
 
-bvalid.prototype.isBigInt = function(variable){
-    if(
-      Object.prototype.toString.call(variable) == "[object BigInt]" ||
-      (
-        ___brw_isValidData(variable) && variable.constructor.name === 'BigInt'
-      )
-    ) return true;
-    return false;
+bvalid.prototype.isRegex = function(_v){
+  return Object.prototype.toString.call(_v) === "[object RegExp]";
 }
 
-bvalid.prototype.isNull= function(variable){
-    if(
-      Object.prototype.toString.call(variable) == "[object Null]" ||
-      variable === null
-    ) return true;
-    return false;
+bvalid.prototype.isObject = function(_v){
+  return Object.prototype.toString.call(_v) === "[object Object]";
 }
 
-bvalid.prototype.isUndefined= function(variable){
-    if(
-      Object.prototype.toString.call(variable) == "[object Undefined]" ||
-      variable === undefined
-    ) return true;
-    return false;
+bvalid.prototype.isBoolean = function(_v) {
+  return Object.prototype.toString.call(_v) === "[object Boolean]";
 }
 
-bvalid.prototype.isBuffer = function(variable){
-    if(___brw_isValidData(variable) && variable.constructor.name === 'Buffer') return true;
-    return false;
-}
-
-bvalid.prototype.isRegex = function(variable){
-    if(
-        Object.prototype.toString.call(variable) == "[object RegExp]" ||
-        (
-          ___brw_isValidData(variable) && variable.constructor.name === 'RegExp'
-        )
-    ) return true;
-    return false;
-}
-
-bvalid.prototype.isObject = function(variable){
-    if(
-      Object.prototype.toString.call(variable) == "[object Object]" ||
-      (
-        ___brw_isValidData(variable) && variable.constructor.name === 'Object'
-      )
-    ) return true;
-    return false;
-}
-
-bvalid.prototype.isBoolean = function(variable) {
-    if(
-      Object.prototype.toString.call(variable) == "[object Boolean]" ||
-      (
-        (variable === true || variable === false) && variable.constructor.name === 'Boolean'
-      )
-    ) return true;
-    return false;
-}
-
-bvalid.prototype.isFunction = function(variable){
-    if(
-      Object.prototype.toString.call(variable) == "[object Function]" ||
-      (
-        ___brw_isValidData(variable) && variable.constructor.name === 'Function'
-      )
-    ){
+bvalid.prototype.isFunction = function(_v){
+    if(Object.prototype.toString.call(_v) == "[object Function]"){
         try{
-          var cls = /^class\s+/.test(variable.toString().trim())
-          if(cls){return false}
-          return true;
+          var cls = /^class\s+/.test(_v.toString().trim())
+          return !cls;
         }catch(err){return false}
     }
     return false;
 }
 
-bvalid.prototype.isClass = function(variable){
-    if(___brw_isValidData(variable) && variable.constructor.name === 'Function'){
-        try{
-          var cls = /^class\s+/.test(variable.toString().trim())
-          if(cls){return true}
-          return false;
-        }catch(err){return false}
-    }
-    return false;
-}
-
-bvalid.prototype.isDate = function(variable){
-    if(
-      Object.prototype.toString.call(variable) == "[object Date]" ||
-      (
-        ___brw_isValidData(variable) && variable.constructor.name === 'Date'
-      )
-    ) return true;
-    return false;
-}
-
-bvalid.prototype.isError = function(variable){
-    if(
-      Object.prototype.toString.call(variable) == "[object Error]" ||
-      (
-        ___brw_isValidData(variable) && variable.constructor.name === 'Error'
-      )
-    ) return true;
-    return false;
-}
-
-bvalid.prototype.isSymbol = function(variable){
-    if(
-      Object.prototype.toString.call(variable) == "[object Symbol]" ||
-      (
-        ___brw_isValidData(variable) && variable.constructor.name === 'Symbol'
-      )
-    ) return true;
-    return false;
-}
-
-bvalid.prototype.isPromise = function(variable){
-    if(
-      Object.prototype.toString.call(variable) == "[object Promise]" ||
-      (
-        ___brw_isValidData(variable) && variable.constructor.name === 'Promise'
-      )
-    ) return true;
-    return false;
-}
-
-bvalid.prototype.isBase64 = function(variable){
-    if(
-      Object.prototype.toString.call(variable) == "[object String]" ||
-      (
-        ___brw_isValidData(variable) && (typeof variable === "string") && (variable.constructor.name === 'String')
-      )
-    ){
-      return ___brw_base64.test(variable);
-    }
-    return false;
-}
-
-bvalid.prototype.isUrl = function(variable){
-    if(
-      Object.prototype.toString.call(variable) == "[object String]" ||
-      (
-        ___brw_isValidData(variable) && (typeof variable === "string") && (variable.constructor.name === 'String')
-      )
-    ){
-        if(___brw_validDomainReg.test(variable)) return true;
-        if(___brw_validIpUrlReg.test(variable)) return true;
-    }
-    return false;
-}
-
-bvalid.prototype.isPort = function(variable){
-    if(___brw_isValidData(variable) && isNaN(variable) === false){
-      variable = Number(variable);
-      return (variable >= 1 && variable <= 65535)
-    }
-    return false;
-}
-
-bvalid.prototype.isEmail = function(variable){
-    if(
-      Object.prototype.toString.call(variable) == "[object String]" ||
-      (
-        ___brw_isValidData(variable) && (typeof variable === "string") && (variable.constructor.name === 'String')
-      )
-    ){
-      return ___brw_validEmailReg.test(variable);
-    }
-    return false;
-}
-
-bvalid.prototype.isUppercase = function(variable){
-  if(
-    Object.prototype.toString.call(variable) == "[object String]" ||
-    (
-      ___brw_isValidData(variable) && (typeof variable === "string") &&
-      (variable.constructor.name === 'String')
-    )
-  ){
-    return (/[a-z]/g.test(variable)===false);
+bvalid.prototype.isClass = function(_v){
+  if(Object.prototype.toString.call(_v) === "[object Function]"){
+    try{
+      var cls = /^class\s+/.test(_v.toString().trim())
+      return cls;
+    }catch(err){return false}
   }
   return false;
 }
 
-bvalid.prototype.isLowercase = function(variable){
-  if(
-    Object.prototype.toString.call(variable) == "[object String]" ||
-    (
-      ___brw_isValidData(variable) && (typeof variable === "string") &&
-      (variable.constructor.name === 'String')
-    )
-  ){
-    return (/[A-Z]/g.test(variable)===false);
+bvalid.prototype.isDate = function(_v){
+  return Object.prototype.toString.call(_v) === "[object Date]";
+}
+
+bvalid.prototype.isError = function(_v){
+  return Object.prototype.toString.call(_v) === "[object Error]";
+}
+
+bvalid.prototype.isSymbol = function(_v){
+  return Object.prototype.toString.call(_v) === "[object Symbol]";
+}
+
+bvalid.prototype.isPromise = function(_v){
+  return Object.prototype.toString.call(_v) === "[object Promise]";
+}
+
+bvalid.prototype.isBase64 = function(_v){
+    if(Object.prototype.toString.call(_v) === "[object String]"){
+      return ___brw_base64.test(_v);
+    }
+    return false;
+}
+
+bvalid.prototype.isUrl = function(_v){
+    if(Object.prototype.toString.call(_v) === "[object String]"){
+        if(___brw_validDomainReg.test(_v)) return true;
+        if(___brw_validIpUrlReg.test(_v)) return true;
+    }
+    return false;
+}
+
+bvalid.prototype.isPort = function(_v){
+    if(!isNaN(_v)){
+      _v = Number(_v);
+      return (_v >= 1 && _v <= 65535)
+    }
+    return false;
+}
+
+bvalid.prototype.isEmail = function(_v){
+    if(Object.prototype.toString.call(_v) === "[object String]"){
+      return ___brw_validEmailReg.test(_v);
+    }
+    return false;
+}
+
+bvalid.prototype.isUppercase = function(_v){
+  if(Object.prototype.toString.call(_v) === "[object String]"){
+    return (/^[A-Z]+$/.test(_v)===true);
   }
   return false;
 }
 
-bvalid.prototype.isAlphabet = function(variable){
-  if(
-    Object.prototype.toString.call(variable) == "[object String]" ||
-    (
-      ___brw_isValidData(variable) && (typeof variable === "string") &&
-      (variable.constructor.name === 'String')
-    )
-  ){
-    return /^[a-zA-Z]+$/.test(variable);
+bvalid.prototype.isLowercase = function(_v){
+  if(Object.prototype.toString.call(_v) === "[object String]"){
+    return (/^[a-z]+$/.test(_v)===true);
   }
   return false;
 }
 
-bvalid.prototype.isAlphanumeric = function(variable){
-  if(
-    Object.prototype.toString.call(variable) == "[object String]" ||
-    (
-      ___brw_isValidData(variable) && (typeof variable === "string") &&
-      (variable.constructor.name === 'String')
-    )
-  ){
-    if(variable.trim().length === 0) return false;
-    if(/^[a-zA-Z0-9]+$/.test(variable) &&
-      /[a-zA-Z]/.test(variable) &&
-      /[0-9]/.test(variable)
+bvalid.prototype.isAlphabet = function(_v){
+  if(Object.prototype.toString.call(_v) === "[object String]"){
+    return /^[a-zA-Z]+$/.test(_v);
+  }
+  return false;
+}
+
+bvalid.prototype.isAlphanumeric = function(_v){
+  if(Object.prototype.toString.call(_v) === "[object String]"){
+    if(_v.trim().length === 0) return false;
+    if(/^[a-zA-Z0-9]+$/.test(_v) &&
+      /[a-zA-Z]/.test(_v) &&
+      /[0-9]/.test(_v)
     ) return true;
   }
   return false;

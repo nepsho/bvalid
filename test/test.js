@@ -1,11 +1,9 @@
 "use strict";
-const bvalid = require("../index");
+const bvalid = require("../lib/bvalid");
 const sample = require("./samples/sample");
-const isString = require("../index").isString;
+const isString = bvalid.isString;
 const node_version = process.version || "v0";
 var node_v = 0;
-
-var samp = sample.all_sample;
 
 if(isString(node_version)==false)
 {
@@ -20,7 +18,6 @@ if(node_version[1] != undefined){
 } else {
   node_v = 0;
 }
-
 
 
 //string
@@ -213,6 +210,33 @@ for(var i = 0 ; i < sample.s_emails.length ; i++)
   if(bvalid.isEmail(sample.s_emails[i]) === false)
   {
     throw new Error("Test fail at Emails");
+  }
+}
+
+//upperCase
+for(var i = 0 ; i < sample.s_uppercase.length ; i++)
+{
+  if(bvalid.isUppercase(sample.s_uppercase[i]) === false)
+  {
+    throw new Error("Test fail at Upeercase");
+  }
+}
+
+//lowerCase
+for(var i = 0 ; i < sample.s_lowercase.length ; i++)
+{
+  if(bvalid.isLowercase(sample.s_lowercase[i]) === false)
+  {
+    throw new Error("Test fail at Lowercase");
+  }
+}
+
+//alphanumeric
+for(var i = 0 ; i < sample.s_alphanumeric.length ; i++)
+{
+  if(bvalid.isAlphanumeric(sample.s_alphanumeric[i]) === false)
+  {
+    throw new Error("Test fail at Alphanumeric");
   }
 }
 
